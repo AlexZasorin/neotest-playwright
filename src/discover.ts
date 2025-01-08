@@ -10,8 +10,8 @@ import { flattenSpecs } from './report';
 import type { Adapter } from './types/adapter';
 
 export const root: Adapter['root'] = lib.files.match_root_pattern(
-	'playwright.config.ts',
-	'playwright.config.js',
+	'**/playwright.config.ts',
+	'**/playwright.config.js',
 );
 
 export const filterDir: Adapter['filter_dir'] = (
@@ -102,7 +102,7 @@ export const discoverPositions: Adapter['discover_positions'] = (
 			? {
 					build_position:
 						'require("neotest-playwright.discover")._build_position',
-			  }
+				}
 			: {}),
 	});
 };
